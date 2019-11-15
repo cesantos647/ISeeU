@@ -51,13 +51,12 @@
         var context = canvas.getContext('2d');
         snap.addEventListener("click", function(){
             context.drawImage(video, 0, 0, 640, 480);
-            var receiveImage = document.getElementById("context");
+            var receiveImage = document.getElementById("canvas");
             var img    = receiveImage.toDataURL("image/png");
-            document.write('<img src="'+img+'"/>');
-            
+            var t = document.write('<img src="'+img+'"/>');            
         });
     </script>
-
+     <img src=t style="width:500px;height:600px;">
 
     </body>
 </html>
