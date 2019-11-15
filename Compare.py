@@ -16,17 +16,15 @@ def identify(fileName, unknownFileName):
 
     known_user_encoding = face_recognition.face_encodings(known_image)[0]
     unknown_user_encoding = face_recognition.face_encodings(unknown_image)[0]
-    #print(known_user_encoding)
     results = face_recognition.compare_faces([known_user_encoding], unknown_user_encoding, 0.3)
 
-    #print("Success")
     print(results)
     return results
 
 
-# -------------- da main function ----------------------------
+# -------------- the main function ----------------------------
 if __name__ == "__main__":
     christianPic = "christian_web_2.png"
-    unknownChristianPic = "umair_4.png"
+    unknownChristianPic = "christian_web.jpg"
     loadImage(christianPic)
     identify(christianPic, unknownChristianPic)
