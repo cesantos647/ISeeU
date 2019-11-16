@@ -1,3 +1,5 @@
+import DBAccess.js;
+
 const express = require('express');
 const cors = require('cors');
 
@@ -21,6 +23,7 @@ app.post('/img', (req, res) => {
     res.json({
         message: "its getting the data"
     });
+    //upload response
     console.log('request body' + (req.body));
     console.log('request body' + (typeof(req)));
 })
