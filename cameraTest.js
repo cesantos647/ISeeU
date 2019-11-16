@@ -9,6 +9,7 @@ const constraints = {
         width: 640, height: 480
     }
 };
+
 async function init(){
     try{
        
@@ -29,16 +30,44 @@ snap.addEventListener("click", function(){
     context.drawImage(video, 0, 0, 640, 480);
     var receiveImage = document.getElementById("canvas");
     var img  = receiveImage.toDataURL("image/png");
+
+    // var t = document.write('<img src="'+img+'"/>');       
+    // console.log(img);    
+    // console.log("hi");
+    // console.log(t);
+    var json={"name":img};
+    sendData(json);
+
     var t = document.write('<img src="'+img+'"/>');       
     console.log(img);    
     console.log("hi");
     console.log(t);
     sendData(img);
+
 });
 
 
 function sendData(data)
 {
+
+    var xhr = new XMLHttpRequest();
+    // console.log(xhr);
+
+        //open function
+    xhr.open('POST','http://localhost:5000/img', false);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.send(JSON.stringify(data));
+
+
+
+
+
+//     axios
+//   .post('http://localhost:5000/img', data)
+//   .then(response => {
+//   console.log(response)
+
+
     // var xhr = new XMLHttpRequest();
     // console.log(xhr);
 
@@ -51,4 +80,5 @@ function sendData(data)
   .then(response => {
   console.log("response:"+response)
 })
+
 }
