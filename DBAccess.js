@@ -12,7 +12,7 @@ admin.initializeApp({
 
 // Set the configuration for your app
 var firebaseConfig = {
-    apiKey: ' AIzaSyD3TZzTVxBIuRLL54Wj_NeKr1G1ldupZI0',
+    apiKey: ' ',
     authDomain: 'iseeu-259117.firebaseapp.com',
     databaseURL: 'https://iseeu-259117.firebaseio.com',
     storageBucket: 'gs://iseeu-259117.appspot.com'
